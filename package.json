@@ -1,0 +1,35 @@
+{
+  "name": "buildingwithclaude",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "ts-node src/01.ts",
+    "day1": "ts-node src/week1/day1.ts",
+    "day2": "ts-node src/week1/day2.ts",
+    "day3": "ts-node src/week1/day3.ts",
+    "day4": "ts-node src/week1/day4.ts",
+    "day5": "ts-node src/week1/day5.ts",
+    "day6": "ts-node src/week1/day6.ts",
+    "day7": "ts-node src/week1/day7.ts",
+    "day8": "ts-node src/week2/day8.ts",
+    "day9": "ts-node src/week2/day9.ts",
+    "day10": "ts-node src/week2/day10.ts",
+    "day11": "ts-node src/week2/day11.ts",
+    "day12": "ts-node src/week2/day12.ts",
+    "day13": "ts-node src/week2/day13.ts",
+    "day14": "ts-node src/week2/day14.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@types/node": "^26.0.0",
+    "tsx": "^4.22.4",
+    "typescript": "^6.0.3"
+  },
+  "dependencies": {
+    "ts-node": "^10.9.2"
+  }
+}
