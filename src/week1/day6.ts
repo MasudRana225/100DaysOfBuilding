@@ -2,25 +2,25 @@
 
 const portfolio = [
     {
-        "TokenName": "BTC",
-        "HoldingAmount": 0.5,
-        "CurrentPrice": 30000
+        "tokenName": "BTC",
+        "holdingAmount": 0.5,
+        "currentPrice": 30000
     },
     {
-        "TokenName": "ETH",
-        "HoldingAmount": 2,
-        "CurrentPrice": 2000
+        "tokenName": "ETH",
+        "holdingAmount": 2,
+        "currentPrice": 2000
     },
     {
-        "TokenName": "SOL",
-        "HoldingAmount": 10,
-        "CurrentPrice": 50
+        "tokenName": "SOL",
+        "holdingAmount": 10,
+        "currentPrice": 50
     }
 
 ]
 
 for (const holding of portfolio) {
-    console.log(`Token: ${holding.TokenName}, Holding Amount: ${holding.HoldingAmount}, Current Price: ${holding.CurrentPrice}, Total Value: ${holding.HoldingAmount * holding.CurrentPrice}`);
+    console.log(`Token: ${holding.tokenName}, Holding Amount: ${holding.holdingAmount}, Current Price: ${holding.currentPrice}, Total Value: ${holding.holdingAmount * holding.currentPrice}`);
 }
 
 

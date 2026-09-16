@@ -11,7 +11,7 @@ console.log(`currentBTCPrice: $${currentBTCPrice}`);
 ## Project
 
 - **Name:** BTC Price Printer
-- **Time:** 2026-01-07 21:00 (approx)
+- **Time:** 11:00 AM 09/05/26
 - **What I learned:** Template literals vs string quotes for output
 - **Difficulty:** None
 - **How I solved it:** Simple fix - used a template literal
@@ -210,4 +210,37 @@ console.log(watchlist);
 - **What I learned** TS type annotation, Arrays push and splice methods, for of loops and how can a duplicate values can create skipping.
  - **One difficulty / how solved:** how to use the splice method and find index together inside for the for loops/ resolved by create a variable name index and hold the index value of item in it then use the splice method
 
- 
+
+# day - 10 is just review day from day 1 to 9
+
+# day - 11 Typed Portfolio
+
+```typescript
+interface portfolioItem {
+    tokenName: string;
+    holdingAmount: number;
+    currentPrice: number;
+}
+
+const portfolio: portfolioItem[] = [
+    {
+        tokenName: "BTC",
+        holdingAmount: 0.5,
+        currentPrice: 76000
+    },
+    {
+        tokenName: "ETH",
+        holdingAmount: 2,
+        currentPrice: 2000
+    },
+    {
+        tokenName: "SOL",
+        holdingAmount: 10,
+        currentPrice: 50
+    }
+];
+```
+- **Name:** Typed Portfolio
+- **Time:** 2:02PM 16/9/26
+- **What I learned** interface and Type annotation
+- **One difficulty/How I solved:** Type annotation, I was confused how to use the portfolioItem interface as typed annotation for portfolio array, got help from a AI how to used type annotation
