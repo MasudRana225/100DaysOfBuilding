@@ -216,13 +216,13 @@ console.log(watchlist);
 # day - 11 Typed Portfolio
 
 ```typescript
-interface portfolioItem {
+interface PortfolioItem {
     tokenName: string;
     holdingAmount: number;
     currentPrice: number;
 }
 
-const portfolio: portfolioItem[] = [
+const portfolio: PortfolioItem[] = [
     {
         tokenName: "BTC",
         holdingAmount: 0.5,
@@ -244,3 +244,55 @@ const portfolio: portfolioItem[] = [
 - **Time:** 2:02PM 16/9/26
 - **What I learned** interface and Type annotation
 - **One difficulty/How I solved:** Type annotation, I was confused how to use the portfolioItem interface as typed annotation for portfolio array, got help from a AI how to used type annotation
+
+
+# Day 12 - Interface for Tokens
+
+```typescript
+interface Token{
+    symbol: string;
+    chain: string;
+    decimals: number;
+}
+
+interface PortfolioItem {
+    token: Token;
+    holdingAmount: number;
+    currentPrice: number;
+}
+
+const portfolio: PortfolioItem[] = [
+    {
+        token: {
+            symbol: "BTC",
+            chain: "bitcoin",
+            decimals: 8
+        },
+        holdingAmount: 0.1,
+        currentPrice: 78000
+    },
+    {
+        token: {
+            symbol: "ETH",
+            chain: "ethereum",
+            decimals: 18
+        },
+        holdingAmount: 1,
+        currentPrice: 2500
+    },
+    {
+        token: {
+            symbol: "SOL",
+            chain: "solana",
+            decimals: 9
+        },
+        holdingAmount: 10,
+        currentPrice: 105
+    }
+]
+
+console.log(portfolio);
+```
+- **Name** Interface for Tokens
+- **What I learned** Using interface Inside a interface
+- **One difficulty** No difficulty

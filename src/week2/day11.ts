@@ -1,12 +1,12 @@
 //Typed Portfolio Project
 
-interface portfolioItem {
+interface PortfolioItem {
     tokenName: string;
     holdingAmount: number;
     currentPrice: number;
 }
 
-const portfolio: portfolioItem[] = [
+const portfolio: PortfolioItem[] = [
     {
         tokenName: "BTC",
         holdingAmount: 0.5,
