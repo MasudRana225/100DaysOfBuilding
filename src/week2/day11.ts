@@ -19,7 +19,7 @@ const portfolio: PortfolioItem[] = [
     },
     {
         tokenName: "SOL",
-        holdingAmount: 10,
+        holdingAmount: 10, 
         currentPrice: 50
     }
 ];

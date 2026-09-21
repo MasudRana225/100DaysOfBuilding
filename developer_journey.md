@@ -296,3 +296,59 @@ console.log(portfolio);
 - **Name** Interface for Tokens
 - **What I learned** Using interface Inside a interface
 - **One difficulty** No difficulty
+
+# Day 13 - enums
+```typescript
+enum Chain {
+    Bitcoin = "bitcoin",
+    Ethereum = "ethereum",
+    Solana = "solana"
+}
+
+
+interface Token{
+    symbol: string;
+    chain: Chain;
+    decimals: number;
+}
+
+interface PortfolioItem {
+    token: Token;
+    holdingAmount: number;
+    currentPrice: number;
+}
+
+const portfolio: PortfolioItem[] = [
+    {
+        token: {
+            symbol: "BTC",
+            chain: Chain.Bitcoin,
+            decimals: 8
+        },
+        holdingAmount: 0.1,
+        currentPrice: 78000
+    },
+    {
+        token: {
+            symbol: "ETH",
+            chain: Chain.Ethereum,
+            decimals: 18
+        },
+        holdingAmount: 1,
+        currentPrice: 2500
+    },
+    {
+        token: {
+            symbol: "SOL",
+            chain: Chain.Solana,
+            decimals: 9
+        },
+        holdingAmount: 10,
+        currentPrice: 105
+    }
+]
+
+console.log(portfolio);
+```
+- **enum** An enum ("enumerated type") is a way to define a fixed, named set of possible values — you're telling TypeScript "this variable can only ever be one of these specific options, nothing else."
+- **What I did today** just declare a enum for chain in day 12 code

@@ -1,8 +1,15 @@
 // Interface for Tokens
 
+enum Chain {
+    Bitcoin = "bitcoin",
+    Ethereum = "ethereum",
+    Solana = "solana"
+}
+
+
 interface Token{
     symbol: string;
-    chain: string;
+    chain: Chain;
     decimals: number;
 }
 
@@ -16,7 +23,7 @@ const portfolio: PortfolioItem[] = [
     {
         token: {
             symbol: "BTC",
-            chain: "bitcoin",
+            chain: Chain.Bitcoin,
             decimals: 8
         },
         holdingAmount: 0.1,
@@ -25,7 +32,7 @@ const portfolio: PortfolioItem[] = [
     {
         token: {
             symbol: "ETH",
-            chain: "ethereum",
+            chain: Chain.Ethereum,
             decimals: 18
         },
         holdingAmount: 1,
@@ -34,7 +41,7 @@ const portfolio: PortfolioItem[] = [
     {
         token: {
             symbol: "SOL",
-            chain: "solana",
+            chain: Chain.Solana,
             decimals: 9
         },
         holdingAmount: 10,
