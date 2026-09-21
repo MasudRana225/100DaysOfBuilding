@@ -352,3 +352,44 @@ console.log(portfolio);
 ```
 - **enum** An enum ("enumerated type") is a way to define a fixed, named set of possible values — you're telling TypeScript "this variable can only ever be one of these specific options, nothing else."
 - **What I did today** just declare a enum for chain in day 12 code
+
+# day 14 - Generics
+
+```typescript
+interface ApiResponse<T> {
+    success: boolean;
+    data: T;
+}
+enum Chain {
+    Bitcoin = "bitcoin",
+    Ethereum = "ethereum",
+    Solana = "solana"
+}
+
+interface Token{
+    symbol: string;
+    chain: Chain;
+    decimals: number;
+}
+
+const apiResponse: ApiResponse<Token> = {
+    success: true,
+    data: {
+        symbol: "BTC",
+        chain: Chain.Bitcoin,
+        decimals: 9
+    }
+}
+
+const currentPrice: ApiResponse<number> = {
+    success: true,
+    data: 2000
+}
+
+console.log(apiResponse);
+console.log(currentPrice);
+```
+
+- **Name** Generic API Wrapper
+- **What I learned** Generics in TypeScript are a feature that allows you to write reusable, flexible code by passing types as arguments. They act as placeholders for types, enabling a single function, interface, or class to work with multiple data types while fully preserving type.
+- **One difficulty** I passed Number instead of number in data : T. Now I know the difference between the Number and number. 
