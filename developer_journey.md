@@ -353,7 +353,7 @@ console.log(portfolio);
 - **enum** An enum ("enumerated type") is a way to define a fixed, named set of possible values — you're telling TypeScript "this variable can only ever be one of these specific options, nothing else."
 - **What I did today** just declare a enum for chain in day 12 code
 
-# day 14 - Generics
+# day 14 - Generic API Wrapper
 
 ```typescript
 interface ApiResponse<T> {
@@ -393,3 +393,96 @@ console.log(currentPrice);
 - **Name** Generic API Wrapper
 - **What I learned** Generics in TypeScript are a feature that allows you to write reusable, flexible code by passing types as arguments. They act as placeholders for types, enabling a single function, interface, or class to work with multiple data types while fully preserving type.
 - **One difficulty** I passed Number instead of number in data : T. Now I know the difference between the Number and number. 
+
+
+# day 15 - CLI Menus
+```typescript
+// CLI Menus
+
+import * as readline from 'readline';
+
+const rl = readline.createInterface({
+  input: process.stdin,
+  output: process.stdout
+});
+enum Chain {
+    Bitcoin = "bitcoin",
+    Ethereum = "ethereum",
+    Solana = "solana"
+}
+
+
+interface Token{
+    symbol: string;
+    chain: Chain;
+    decimals: number;
+}
+
+interface PortfolioItem {
+    token: Token;
+    holdingAmount: number;
+    currentPrice: number;
+}
+
+const portfolio: PortfolioItem[] = [
+    {
+        token: {
+            symbol: "BTC",
+            chain: Chain.Bitcoin,
+            decimals: 8
+        },
+        holdingAmount: 0.1,
+        currentPrice: 78000
+    },
+    {
+        token: {
+            symbol: "ETH",
+            chain: Chain.Ethereum,
+            decimals: 18
+        },
+        holdingAmount: 1,
+        currentPrice: 2500
+    },
+    {
+        token: {
+            symbol: "SOL",
+            chain: Chain.Solana,
+            decimals: 9
+        },
+        holdingAmount: 10,
+        currentPrice: 105
+    }
+]
+
+// rl.question('1. View portfolio\n2. Exit\nChoose an option: ', (choice: string) => {
+//   //with string choice, we can use strict equality checks to compare the input with the expected options. This ensures that the input is exactly what we expect, without any type coercion.
+//   if (choice === '1') {
+//     console.log('Portfolio:');
+//     console.log(portfolio);
+//   } else if (choice === '2') {
+//     console.log('Exiting...');
+//   } else {
+//     console.log('Invalid choice. Please try again.');
+//   }
+//   rl.close();
+// });
+rl.question('1. View portfolio\n2. Exit\nChoose an option: ', (choice: string) => {
+  //with number choice, we can convert the input string to a number and then use strict equality checks to compare it with the expected numeric options. This allows us to handle numeric input more effectively.
+   const numericChoice = Number(choice);
+  if (numericChoice === 1) {
+    console.log('Portfolio:');
+    console.log(portfolio);
+  } else if (numericChoice === 2) {
+    console.log('Exiting...');
+  } else {
+    console.log('Invalid choice. Please try again.');
+  }
+  rl.close();
+});
+```
+
+- **Name** : CLI Menus
+- **Time** 12:44 AM 26/9/26
+- **What I learned**: readline module
+- **One difficulty**  importing problem, encountered so many errors while importing readline module.
+
