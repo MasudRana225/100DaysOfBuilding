@@ -26,7 +26,7 @@ interface PortfolioItem {
     currentPrice: number;
 }
 
-const portfolio: PortfolioItem[] = [
+export const portfolio: PortfolioItem[] = [
     {
         token: {
             symbol: "BTC",
@@ -68,17 +68,21 @@ const portfolio: PortfolioItem[] = [
 //   }
 //   rl.close();
 // });
-rl.question('1. View portfolio\n2. Exit\nChoose an option: ', (choice: string) => {
+function showMenu() {
+    rl.question('1. View portfolio\n2. Exit\nChoose an option: ', (choice: string) => {
   //with number choice, we can convert the input string to a number and then use strict equality checks to compare it with the expected numeric options. This allows us to handle numeric input more effectively.
    const numericChoice = Number(choice);
   if (numericChoice === 1) {
     console.log('Portfolio:');
     console.log(portfolio);
-  } else if (numericChoice === 2) {
+    rl.close();
+} else if (numericChoice === 2) {
     console.log('Exiting...');
+    rl.close();
   } else {
     console.log('Invalid choice. Please try again.');
+    showMenu();
   }
-  rl.close();
 });
-
+}
+showMenu();

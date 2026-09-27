@@ -398,6 +398,7 @@ console.log(currentPrice);
 # day 15 - CLI Menus
 ```typescript
 // CLI Menus
+//The node:readline module in Node.js provides a built-in interface for reading data from a readable stream, such as terminal input (process.stdin), one line at a time. It is widely used to build command-line interfaces (CLIs), prompt users for input, and process large text files line-by-line
 
 import * as readline from 'readline';
 
@@ -466,19 +467,24 @@ const portfolio: PortfolioItem[] = [
 //   }
 //   rl.close();
 // });
-rl.question('1. View portfolio\n2. Exit\nChoose an option: ', (choice: string) => {
+function showMenu() {
+    rl.question('1. View portfolio\n2. Exit\nChoose an option: ', (choice: string) => {
   //with number choice, we can convert the input string to a number and then use strict equality checks to compare it with the expected numeric options. This allows us to handle numeric input more effectively.
    const numericChoice = Number(choice);
   if (numericChoice === 1) {
     console.log('Portfolio:');
     console.log(portfolio);
-  } else if (numericChoice === 2) {
+    rl.close();
+} else if (numericChoice === 2) {
     console.log('Exiting...');
+    rl.close();
   } else {
     console.log('Invalid choice. Please try again.');
+    showMenu();
   }
-  rl.close();
 });
+}
+showMenu();
 ```
 
 - **Name** : CLI Menus
@@ -486,3 +492,13 @@ rl.question('1. View portfolio\n2. Exit\nChoose an option: ', (choice: string) =
 - **What I learned**: readline module
 - **One difficulty**  importing problem, encountered so many errors while importing readline module.
 
+# day 16 Config files-
+[Click here to view the Day 16 code file](./src/week3/day16.ts)
+[config.ts file](./src/config.ts)
+[types.ts file](./src/types.ts)
+
+- **Time** 12:18AM 28/09/26
+- **What I learned** How to create config files for any project, what should I write on config file and what should I not.
+- **difficulty/How I solved** there was many problems I encounter today, 1. I felt so stupid today and my mind was telling I can't figure out how to write config files, I should quit even I quit But I return because I realize quiting because of feeling stupid was the reason I waste so much time. so from now no matter what happens I will go forward. 2. I was confused about what field should a config file have after some time with hints I solved A configuration file stores static structure, metadata, and core rules that stay constant while my program runs. it defines what options exist and how they are laid out, separating the structural data from the engine that actually executes the code.
+
+- **Tomorrow's project** Day 17 - review day
