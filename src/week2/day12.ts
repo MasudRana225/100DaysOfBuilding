@@ -1,6 +1,6 @@
 // Interface for Tokens
-
-enum Chain {
+export {} // This line is necessary to make this file a module and avoid global scope pollution
+ enum Chain {
     Bitcoin = "bitcoin",
     Ethereum = "ethereum",
     Solana = "solana"

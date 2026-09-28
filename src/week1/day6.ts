@@ -1,5 +1,5 @@
 //JSON Portfolio
-
+export {} // This line is necessary to make this file a module and avoid global scope pollution
 const portfolio = [
     {
         "tokenName": "BTC",

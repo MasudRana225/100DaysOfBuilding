@@ -1,36 +1,7 @@
 import * as readline from "readline";
 import {  menuConfig} from "../config";
-import { Chain, PortfolioItem } from "../types";
+import {mockPortfolio } from "../mockPortfolio";
 
-const portfolio: PortfolioItem[] = [
-    {
-        token: {
-            symbol: "BTC",
-            chain: Chain.Bitcoin,
-            decimals: 8
-        },
-        holdingAmount: 0.1,
-        currentPrice: 78000
-    },
-    {
-        token: {
-            symbol: "ETH",
-            chain: Chain.Ethereum,
-            decimals: 18
-        },
-        holdingAmount: 1,
-        currentPrice: 2500
-    },
-    {
-        token: {
-            symbol: "SOL",
-            chain: Chain.Solana,
-            decimals: 9
-        },
-        holdingAmount: 10,
-        currentPrice: 105
-    }
-]
 
 const rl = readline.createInterface({
   input: process.stdin,
@@ -46,7 +17,7 @@ function displayMenu() {
      const numericChoice = Number(choice);
     if (numericChoice === 1) {
       console.log('Portfolio:');
-      console.log(portfolio);
+      console.log(mockPortfolio);
         rl.close();
     } else if (numericChoice === 2) {
       console.log('Exiting...');

@@ -1,12 +1,6 @@
 # Day 1 — BTC Price Printer
 
-## Code (TypeScript)
-
-```typescript
-let currentBTCPrice: number = 59000;
-
-console.log(`currentBTCPrice: $${currentBTCPrice}`);
-```
+[Click here for day 1 code](./src/week1/day1.ts)
 
 ## Project
 
@@ -19,21 +13,7 @@ console.log(`currentBTCPrice: $${currentBTCPrice}`);
 
 # Day2 - ETH gas Formatter(mock)
 
-
-```typescript
-const gasPrice = 100 ; // 100 gwei
-const gasUsed = 21000; // Typical gas used for a simple ETH transfer
-
-function calculateGas(gasPrice: number, gasUsed: number): { gasInGwei: number; gasInETH: number } {
-    const totalCostInGwei = gasPrice * gasUsed;
-    const totalCostInETH = totalCostInGwei / 1e9;
-    return { gasInGwei: totalCostInGwei, gasInETH: totalCostInETH };
-}
-
-const gasCosts = calculateGas(gasPrice, gasUsed);
-console.log(`Gas Cost in Gwei: ${gasCosts.gasInGwei}`);
-console.log(`Gas Cost in ETH: ${gasCosts.gasInETH}`);
-```
+[Click here for day 2 code](./src/week1/day2.ts)
 
 ## project
 
@@ -47,24 +27,7 @@ console.log(`Gas Cost in ETH: ${gasCosts.gasInETH}`);
 
 # Day 3 - Wallet address validator 
 
-```typescript
-const walletAddress = "0x1234567890abcdef1234568790abcdeF12345678";
-
-function isValidWalletAddress(address: string): boolean {
-  if (!address.startsWith("0x") || address.length !== 42) {
-    return false;
-  }
-
-  for (const char of address.slice(2).toLowerCase()) {
-    if(char < '0' || char > '9' && char < 'a' || char > 'f') {
-      return false;
-    }
-  }
-  return true;
-
-}
-console.log(isValidWalletAddress(walletAddress));
-```
+[Click here for day 3 code](./src/week1/day3.ts)
 ## project
 
 - **Name:** Wallet Address Validator
@@ -77,21 +40,7 @@ console.log(isValidWalletAddress(walletAddress));
 
 # Day 4 - Token Converter
 
-```typescript 
-
-const rawAmount: number = 1000000000000000000;
-
-function rawToHuman(rawAmount: number, decimals: number = 18) {
-    return rawAmount / 10**decimals;
-}
-console.log(rawToHuman(5000000, 6));
-
-const humanAmount: number = 1;
-function humanToRaw(humanAmount: number, decimals: number = 18) {
-  return humanAmount * 10**decimals;
-}
-console.log(humanToRaw(humanAmount, 18));
-```
+[Click here for day 4 code](./src/week1/day4.ts)
 
 ## Day 4 project
 **Name**: Token Converter
@@ -103,14 +52,7 @@ console.log(humanToRaw(humanAmount, 18));
 
 # Day 5 - Coin Fliper:
 
-```typescript 
-function getHeadTail() {
-    const random = Math.random();
-    return random <= 0.5 ? 'Head' : 'Tail';
-}
-console.log(getHeadTail());
-```
-## Day 5 project
+[Click here for day 5 code](./src/week1/day5.ts)
 
 - **Name:** Coin Flipper
 - **Time:** 12:51 PM
@@ -120,89 +62,20 @@ console.log(getHeadTail());
 
 # Day 6 - JSON Portfolio
 
-```typescript
-const portfolio = [
-    {
-        "TokenName": "BTC",
-        "HoldingAmount": 0.5,
-        "CurrentPrice": 30000
-    },
-    {
-        "TokenName": "ETH",
-        "HoldingAmount": 2,
-        "CurrentPrice": 2000
-    },
-    {
-        "TokenName": "SOL",
-        "HoldingAmount": 10,
-        "CurrentPrice": 50
-    }
-
-]
-
-for (const holding of portfolio) {
-    console.log(`Token: ${holding.TokenName}, Holding Amount: ${holding.HoldingAmount}, Current Price: ${holding.CurrentPrice}, Total Value: ${holding.HoldingAmount * holding.CurrentPrice}`);
-}
-``` 
+[Click here for day 6 code](./src/week1/day6.ts)
 
 # Day 7 - Random Coin picker
 
-```typescript
-const Coins = ["BTC", "ETH", "LTC", "XRP", "ADA", "DOT", "SOL", "DOGE", "BNB", "LINK"];
+[Click here for day 7 code](./src/week1/day7.ts)
 
-// const RandomCoin = Math.floor(Math.random() * Coins.length)
-const RandomCoin = Math.floor(1 * Coins.length)
-console.log(Coins[RandomCoin]);
-// console.log(Coins.length);
-```
 
 # Day 8 - Timestamp formatter 
 
-```typescript
-const rawTimeStamp = 1789280132;
-
-function convertTimeStampToDate(timeStamp: number) : Date{
-    const milliseconds = timeStamp * 1000;
-    return new Date(milliseconds)
-}
-
-const date = convertTimeStampToDate(rawTimeStamp);
-console.log(date.toLocaleString());
-console.log(date.toISOString());
-```
-
-
-
+[Click here for day 8 code](./src/week2/day8.ts)
 
 # Day - 9 Simple Watchlist
 
-```typescript
-const watchlist: {name: string, price: number}[] = [];
-
-function addToken(name: string, price: number) {
-    watchlist.push({name, price})
-}
-addToken("BTC", 78000);
-addToken("ETH", 2450);
-addToken("SOL", 100);
-addToken("SOL", 100);
-addToken("SOL", 100);
-addToken("SOL", 100);
-addToken("XRP", 100);
-addToken("BNB", 100);
-
-function removeToken(name: string){
-    for (const item of watchlist) {
-        if(item.name === name){
-            const index = watchlist.indexOf(item);
-            watchlist.splice(index,1)
-        }
-    }
-}
-
-removeToken("SOL")
-console.log(watchlist);
-```
+[Click here for day 9 code](./src/week2/day9.ts)
 
 # Day-9 Project
 - **Name:** Simple Watchlist
@@ -215,31 +88,8 @@ console.log(watchlist);
 
 # day - 11 Typed Portfolio
 
-```typescript
-interface PortfolioItem {
-    tokenName: string;
-    holdingAmount: number;
-    currentPrice: number;
-}
+[Click here for day 11 code](./src/week2/day11.ts)
 
-const portfolio: PortfolioItem[] = [
-    {
-        tokenName: "BTC",
-        holdingAmount: 0.5,
-        currentPrice: 76000
-    },
-    {
-        tokenName: "ETH",
-        holdingAmount: 2,
-        currentPrice: 2000
-    },
-    {
-        tokenName: "SOL",
-        holdingAmount: 10,
-        currentPrice: 50
-    }
-];
-```
 - **Name:** Typed Portfolio
 - **Time:** 2:02PM 16/9/26
 - **What I learned** interface and Type annotation
@@ -248,147 +98,18 @@ const portfolio: PortfolioItem[] = [
 
 # Day 12 - Interface for Tokens
 
-```typescript
-interface Token{
-    symbol: string;
-    chain: string;
-    decimals: number;
-}
+[Click here for day 12 code](./src/week2/day12.ts)
 
-interface PortfolioItem {
-    token: Token;
-    holdingAmount: number;
-    currentPrice: number;
-}
-
-const portfolio: PortfolioItem[] = [
-    {
-        token: {
-            symbol: "BTC",
-            chain: "bitcoin",
-            decimals: 8
-        },
-        holdingAmount: 0.1,
-        currentPrice: 78000
-    },
-    {
-        token: {
-            symbol: "ETH",
-            chain: "ethereum",
-            decimals: 18
-        },
-        holdingAmount: 1,
-        currentPrice: 2500
-    },
-    {
-        token: {
-            symbol: "SOL",
-            chain: "solana",
-            decimals: 9
-        },
-        holdingAmount: 10,
-        currentPrice: 105
-    }
-]
-
-console.log(portfolio);
-```
 - **Name** Interface for Tokens
 - **What I learned** Using interface Inside a interface
 - **One difficulty** No difficulty
 
 # Day 13 - enums
-```typescript
-enum Chain {
-    Bitcoin = "bitcoin",
-    Ethereum = "ethereum",
-    Solana = "solana"
-}
-
-
-interface Token{
-    symbol: string;
-    chain: Chain;
-    decimals: number;
-}
-
-interface PortfolioItem {
-    token: Token;
-    holdingAmount: number;
-    currentPrice: number;
-}
-
-const portfolio: PortfolioItem[] = [
-    {
-        token: {
-            symbol: "BTC",
-            chain: Chain.Bitcoin,
-            decimals: 8
-        },
-        holdingAmount: 0.1,
-        currentPrice: 78000
-    },
-    {
-        token: {
-            symbol: "ETH",
-            chain: Chain.Ethereum,
-            decimals: 18
-        },
-        holdingAmount: 1,
-        currentPrice: 2500
-    },
-    {
-        token: {
-            symbol: "SOL",
-            chain: Chain.Solana,
-            decimals: 9
-        },
-        holdingAmount: 10,
-        currentPrice: 105
-    }
-]
-
-console.log(portfolio);
-```
 - **enum** An enum ("enumerated type") is a way to define a fixed, named set of possible values — you're telling TypeScript "this variable can only ever be one of these specific options, nothing else."
 - **What I did today** just declare a enum for chain in day 12 code
 
 # day 14 - Generic API Wrapper
-
-```typescript
-interface ApiResponse<T> {
-    success: boolean;
-    data: T;
-}
-enum Chain {
-    Bitcoin = "bitcoin",
-    Ethereum = "ethereum",
-    Solana = "solana"
-}
-
-interface Token{
-    symbol: string;
-    chain: Chain;
-    decimals: number;
-}
-
-const apiResponse: ApiResponse<Token> = {
-    success: true,
-    data: {
-        symbol: "BTC",
-        chain: Chain.Bitcoin,
-        decimals: 9
-    }
-}
-
-const currentPrice: ApiResponse<number> = {
-    success: true,
-    data: 2000
-}
-
-console.log(apiResponse);
-console.log(currentPrice);
-```
+[Click here for day 14 code](./src/week2/day14.ts)
 
 - **Name** Generic API Wrapper
 - **What I learned** Generics in TypeScript are a feature that allows you to write reusable, flexible code by passing types as arguments. They act as placeholders for types, enabling a single function, interface, or class to work with multiple data types while fully preserving type.
@@ -396,96 +117,7 @@ console.log(currentPrice);
 
 
 # day 15 - CLI Menus
-```typescript
-// CLI Menus
-//The node:readline module in Node.js provides a built-in interface for reading data from a readable stream, such as terminal input (process.stdin), one line at a time. It is widely used to build command-line interfaces (CLIs), prompt users for input, and process large text files line-by-line
-
-import * as readline from 'readline';
-
-const rl = readline.createInterface({
-  input: process.stdin,
-  output: process.stdout
-});
-enum Chain {
-    Bitcoin = "bitcoin",
-    Ethereum = "ethereum",
-    Solana = "solana"
-}
-
-
-interface Token{
-    symbol: string;
-    chain: Chain;
-    decimals: number;
-}
-
-interface PortfolioItem {
-    token: Token;
-    holdingAmount: number;
-    currentPrice: number;
-}
-
-const portfolio: PortfolioItem[] = [
-    {
-        token: {
-            symbol: "BTC",
-            chain: Chain.Bitcoin,
-            decimals: 8
-        },
-        holdingAmount: 0.1,
-        currentPrice: 78000
-    },
-    {
-        token: {
-            symbol: "ETH",
-            chain: Chain.Ethereum,
-            decimals: 18
-        },
-        holdingAmount: 1,
-        currentPrice: 2500
-    },
-    {
-        token: {
-            symbol: "SOL",
-            chain: Chain.Solana,
-            decimals: 9
-        },
-        holdingAmount: 10,
-        currentPrice: 105
-    }
-]
-
-// rl.question('1. View portfolio\n2. Exit\nChoose an option: ', (choice: string) => {
-//   //with string choice, we can use strict equality checks to compare the input with the expected options. This ensures that the input is exactly what we expect, without any type coercion.
-//   if (choice === '1') {
-//     console.log('Portfolio:');
-//     console.log(portfolio);
-//   } else if (choice === '2') {
-//     console.log('Exiting...');
-//   } else {
-//     console.log('Invalid choice. Please try again.');
-//   }
-//   rl.close();
-// });
-function showMenu() {
-    rl.question('1. View portfolio\n2. Exit\nChoose an option: ', (choice: string) => {
-  //with number choice, we can convert the input string to a number and then use strict equality checks to compare it with the expected numeric options. This allows us to handle numeric input more effectively.
-   const numericChoice = Number(choice);
-  if (numericChoice === 1) {
-    console.log('Portfolio:');
-    console.log(portfolio);
-    rl.close();
-} else if (numericChoice === 2) {
-    console.log('Exiting...');
-    rl.close();
-  } else {
-    console.log('Invalid choice. Please try again.');
-    showMenu();
-  }
-});
-}
-showMenu();
-```
+[Click here to view the Day 15 code file](./src/week3/day15.ts)
 
 - **Name** : CLI Menus
 - **Time** 12:44 AM 26/9/26
@@ -502,3 +134,11 @@ showMenu();
 - **difficulty/How I solved** there was many problems I encounter today, 1. I felt so stupid today and my mind was telling I can't figure out how to write config files, I should quit even I quit But I return because I realize quiting because of feeling stupid was the reason I waste so much time. so from now no matter what happens I will go forward. 2. I was confused about what field should a config file have after some time with hints I solved A configuration file stores static structure, metadata, and core rules that stay constant while my program runs. it defines what options exist and how they are laid out, separating the structural data from the engine that actually executes the code.
 
 - **Tomorrow's project** Day 17 - review day
+
+# Day 17 - review day 
+
+- **Time**11:36 PM 28/09/26
+- **what I learned** Duplication causes drift and a missing import/export causes the scope clash. 
+- **difficulty/how I solved** Global scope pollution solved by writing a empty export in day 6, 11,12 and Create mockPortfolio.ts for every file to import mockPortfolio without writing in every single file [mockPortfolio link](./src/mockPortfolio.ts)
+
+- **Tomorrows Project** 

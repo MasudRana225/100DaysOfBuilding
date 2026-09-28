@@ -4,7 +4,7 @@ interface ApiResponse<T> {
     success: boolean;
     data: T;
 }
-enum Chain {
+ enum Chain {
     Bitcoin = "bitcoin",
     Ethereum = "ethereum",
     Solana = "solana"
