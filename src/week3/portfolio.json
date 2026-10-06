@@ -1,0 +1,11 @@
+[
+  {
+    "token": {
+      "symbol": "BTC",
+      "chain": "bitcoin",
+      "decimals": 8
+    },
+    "holdingAmount": 1,
+    "currentPrice": 85000
+  }
+]

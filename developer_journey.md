@@ -141,4 +141,14 @@
 - **what I learned** Duplication causes drift and a missing import/export causes the scope clash. 
 - **difficulty/how I solved** Global scope pollution solved by writing a empty export in day 6, 11,12 and Create mockPortfolio.ts for every file to import mockPortfolio without writing in every single file [mockPortfolio link](./src/mockPortfolio.ts)
 
-- **Tomorrows Project** 
+- **Tomorrows Project** Day 21: Node.js: read/write portfolio JSON.
+
+# day 21: reading and writing a file with Node's fs module.
+[click here for day 21 code](./src/week3/day21.ts)
+
+- **Time** 11: 16PM 05/10/26
+- **What I learned:** Node's fs(fileSystem) module, fs.existsSync() to check if a file exists, fs.readFileSync() to read a files content, fs.writeFileSync() to create a file. Also learned how to collect data from user in cli, enums exists at runtime as a real object.
+I didn't know I can collect userInput in cli one after another using rl.question and by puting rl.question inside the callback of the previous one. The callback only runs once the user has answered. Lastly forced user to use Chain enum instead of typing any string, then the decimals, holdingAmount, currentPrice checks if user don't type a valid number input it will give a warning message and restart.
+- **difficulty/how I solved:** confused in checkFileExists()functions if else block, if block reads the file and returns the content if file exist but else block returns console.log which is undefined and undefined is falsy, so the if(portfolioData) fails in addUserInput function() which leads to failure of file create and asset adding, solved it by checkFileExists()functions else block returning a empty array if file doesn't exist[], which is truthy value and portfolio data now is always true, So fs.writeFileSync writes text to a file, creates the file if it's missing, and replaces the entire contents if it exists no need to check portfolioData is true or not that's why I removed if/else block from addUserInput.
+
+- **Tomorrows Project** day 22: env vars.

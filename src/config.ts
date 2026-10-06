@@ -7,6 +7,7 @@ export const menuConfig: Config = {
     appName: "Crypto Portfolio Manager",
     menuOptions: [
         "1. View portfolio",
-        "2. Exit"
+        "2. Add asset",
+        "3. Exit"
     ],
 };
