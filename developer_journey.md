@@ -152,3 +152,20 @@ I didn't know I can collect userInput in cli one after another using rl.question
 - **difficulty/how I solved:** confused in checkFileExists()functions if else block, if block reads the file and returns the content if file exist but else block returns console.log which is undefined and undefined is falsy, so the if(portfolioData) fails in addUserInput function() which leads to failure of file create and asset adding, solved it by checkFileExists()functions else block returning a empty array if file doesn't exist[], which is truthy value and portfolio data now is always true, So fs.writeFileSync writes text to a file, creates the file if it's missing, and replaces the entire contents if it exists no need to check portfolioData is true or not that's why I removed if/else block from addUserInput.
 
 - **Tomorrows Project** day 22: env vars.
+
+# Day - 22 - env vars
+[Click here for day 22 code](./src/week4/day22.ts)
+- **Time** 1:34 PM, 10/10/2026
+- **What I learned** An .env file(environment file) is a simple text file used in software development to store sensitive data and configuration settings like API keys, database passwords, and crypto wallet addresses, private keys outside of your actual source code. this keeps your secrets safe and prevents them from being accidentally leaked an platforms like github. Never forget to gitignored your .env file before pushing code to github. Today I learned how to import dotenv module and initialize .env file at the start of the script. also learned how to handle missing keys, which ways I can validate a API key,
+- **difficulty/how I solved:** I faced an execution timing bug specific to tsx and ECMAScript Modules(ESM). ◇ injected env (0) from *.env. The tsx runner pre-scans and handles environment variable injection automatically. However, because I'm using ESM import statements at the top of my script, JavaScript runs all standard imports before executing the code inside the file (including my dotenv.config() call). As a result, the code checks for process.env.WALLET_ADDRESS before dotenv has actually loaded it.
+
+ ```typescript 
+    //before
+    import * as dotenv from 'dotenv';
+    dotenv.config();
+    //this cause errors
+    //after
+    import 'dotenv/config';
+```
+- **Tomorros Project** Logger,
+
