@@ -155,17 +155,9 @@ I didn't know I can collect userInput in cli one after another using rl.question
 
 # Day - 22 - env vars
 [Click here for day 22 code](./src/week4/day22.ts)
-- **Time** 1:34 PM, 10/10/2026
-- **What I learned** An .env file(environment file) is a simple text file used in software development to store sensitive data and configuration settings like API keys, database passwords, and crypto wallet addresses, private keys outside of your actual source code. this keeps your secrets safe and prevents them from being accidentally leaked an platforms like github. Never forget to gitignored your .env file before pushing code to github. Today I learned how to import dotenv module and initialize .env file at the start of the script. also learned how to handle missing keys, which ways I can validate a API key,
-- **difficulty/how I solved:** I faced an execution timing bug specific to tsx and ECMAScript Modules(ESM). ◇ injected env (0) from *.env. The tsx runner pre-scans and handles environment variable injection automatically. However, because I'm using ESM import statements at the top of my script, JavaScript runs all standard imports before executing the code inside the file (including my dotenv.config() call). As a result, the code checks for process.env.WALLET_ADDRESS before dotenv has actually loaded it.
+- **Time tooks me to complete** 2 days form oct 10 to oct 12(approximately 4 hours in 2 days)
+- **What I learned** An .env file(environment file) is a simple text file used in software development to store sensitive data and configuration settings like API keys, database passwords, and crypto wallet addresses, private keys outside of your actual source code. this keeps your secrets safe and prevents them from being accidentally leaked an platforms like github. Never forget to gitignored your .env file before pushing code to github. Today I learned how to import dotenv module and initialize .env file at the start of the script. also learned how to handle missing keys, and How to validate an API key from pulling a response from real API with the API key
+- **difficulty/how I solved:** I was encountering a .env loading problem. because I was running day22.ts from masud@main-pc:~/buildingWithClaude/src/week4$ since dotenv look for .env file in the cwd(current working directory) but my .env file was located in project root. So when I run day22.ts from masud@main-pc:~/buildingWithClaude$ it works and loaded .env file properly.
 
- ```typescript 
-    //before
-    import * as dotenv from 'dotenv';
-    dotenv.config();
-    //this cause errors
-    //after
-    import 'dotenv/config';
-```
 - **Tomorros Project** Logger,
 
