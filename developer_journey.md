@@ -164,10 +164,23 @@ I didn't know I can collect userInput in cli one after another using rl.question
 # Day - 23 Logger
 [Click here for day 23 code](./src/week4/day23.ts)
 
-- **Time tooks me to complete** 90 Minutes
+- **Time tooks me to complete** 90 Minutes oct 14, 2026
 - **what I learned** A logger is a small function(or module) that every part of your program calls instead of console.log. It's job is to make every line of output follow the same format.
 When it happened (a timestamp, which you already know from Day 8)
 How serious it is (a “level”, commonly INFO, WARN, ERROR)
 The message itself
 - **One difficulty/How I solved** No difficulty.
 - **Tomorrow's project** Day 24, file watcher.
+
+# Day -24 file Watcher:
+[Click here the day 24 code](./src/week4/day24.ts)
+
+- **Time** 12:28AM 20/10/2026
+- **What I learned**new fs.watch module, How it monitor changes in a files and report.
+- **one difficulty** duplicate report. I mixed up throttling and debouncing. 
+- **how I solved** using throttling, 
+- **Note**for today's script throttling is fine but in future I have to use debouncing.
+            Throttling:  Executes immediately on the first event, then blocks everything else for 100ms.
+            debouncing: • Waits until the events stop firing for 100ms before executing.
+
+- **Tomorrows Project** Day 25, CSV export.
