@@ -1,0 +1,4 @@
+tokenSymbol,chain,decimals,holdingAmount,currentPrice
+BTC,bitcoin,8,1,85000
+ETH,ethereum,18,2,2400
+SOL,solana,9,10,10

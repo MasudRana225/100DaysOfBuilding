@@ -25,23 +25,5 @@
     },
     "holdingAmount": 10,
     "currentPrice": 10
-  },
-  {
-    "token": {
-      "symbol": "SOL",
-      "chain": "solana",
-      "decimals": 9
-    },
-    "holdingAmount": 20,
-    "currentPrice": 120
-  },
-  {
-    "token": {
-      "symbol": "ETH",
-      "chain": "ethereum",
-      "decimals": 18
-    },
-    "holdingAmount": 20,
-    "currentPrice": 2400
   }
 ]

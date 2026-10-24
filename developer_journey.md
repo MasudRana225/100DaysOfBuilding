@@ -184,3 +184,11 @@ The message itself
             debouncing: • Waits until the events stop firing for 100ms before executing.
 
 - **Tomorrows Project** Day 25, CSV export.
+
+# Day - 25 CSV export:
+[click here to see day day25 code](./src/week4/day25.ts)
+
+- **Time** 11:00PM 24/10/26
+- **What I learned** Today I learned how to read a JSON file and export to a CSV file.
+- **one difficulty/How I solved it** Nested object problem. I solved it by mapping an array to transform its elements. I used .map() to transform each portfolio object into a CSV row string.
+- **Tomorrows Project** day 26 review
