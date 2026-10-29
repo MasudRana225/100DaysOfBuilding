@@ -192,3 +192,14 @@ The message itself
 - **What I learned** Today I learned how to read a JSON file and export to a CSV file.
 - **one difficulty/How I solved it** Nested object problem. I solved it by mapping an array to transform its elements. I used .map() to transform each portfolio object into a CSV row string.
 - **Tomorrows Project** day 26 review
+
+
+# Day -26 CoinGecko fetcher
+[click here for code](./src/week5/day31.ts)
+
+- **Time** 3.06PM 10/29/2026
+- **What I learned** How async function works, how to fetch data a real api with API key, how to parse api response and catch errors without without letting the error propagate out of the fetchBTCPrice function.
+- **one difficulty/How I solved** none
+- **Tomorrows Project** Polymarket markets fetcher
+
+
