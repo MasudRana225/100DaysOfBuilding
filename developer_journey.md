@@ -194,12 +194,21 @@ The message itself
 - **Tomorrows Project** day 26 review
 
 
-# Day -26 CoinGecko fetcher
+# Day -31 CoinGecko fetcher
 [click here for code](./src/week5/day31.ts)
 
 - **Time** 3.06PM 10/29/2026
 - **What I learned** How async function works, how to fetch data a real api with API key, how to parse api response and catch errors without without letting the error propagate out of the fetchBTCPrice function.
 - **one difficulty/How I solved** none
 - **Tomorrows Project** Polymarket markets fetcher
+
+# Day -32 Polymarket market fetcher
+[click here for code](./src/week5/day32.ts)
+
+- **Time** completed it two days ago but leave at logging, current time: 1:07AM 11/02/2026
+- **What I learned** the clobTokenIds is a string not an array. I have verified it by comparing against JS's actual .toString()
+- **one difficulty/How I solved it** none
+- **Tomorrows Project** retry logic
+
 
 
