@@ -212,3 +212,12 @@ The message itself
 
 
 
+
+# Day - 33 Retry logic: Implement in day 32 code
+[click here for the code](./src/week5/day32.ts)
+
+- **Time** 11/07/2026
+- **What I learned** 4xx Client Error codes, These codes indicate that the request contains bad syntax or cannot be fullfilled due to a problem on the user's or  application's end. But there are some exception in 4xx like 429, 401 and 408 When encounter these it can be handled with automated fallback logic.
+I was first using a blocklist of [400,401, 403 and 404] so other 4xx was slipping out and retried, then I use an allow list of [429 and 5xx].
+- **One difficulty/How I solved it** I was confused between which error should retry and which should not. Confusion got cleared after seeing some examples.
+- **Tomorrows Project** pagination.
