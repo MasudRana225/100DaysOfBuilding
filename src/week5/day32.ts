@@ -2,21 +2,19 @@
 
 async function fetchMarketsData() {
   const maxRetries = 3;
-
   for(let attempt = 1; attempt <= maxRetries; attempt++) {
       try {
        const response = await fetch('https://gamma-api.polymarket.com/markets?closed=false&limit=2')
 
         if(response.ok){
           const data = await response.json()
-        
           //1. Handle successful response
           for (const market of data) {
           console.log(`Market: ${market.question}, 
                       ID: ${market.id}, 
                       slug: ${market.slug},
                       tokenID: ${market.clobTokenIds}`);
-              // console.log(typeof market.clobTokenIds);
+              console.log(typeof market.clobTokenIds);
               
           }
           return; // success! Exit the function completely

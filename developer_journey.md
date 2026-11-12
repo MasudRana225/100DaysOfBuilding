@@ -213,7 +213,7 @@ The message itself
 
 
 
-# Day - 33 Retry logic: Implement in day 32 code
+# Day - 33 Retry logic: Implemented in day 32 code
 [click here for the code](./src/week5/day32.ts)
 
 - **Time** 11/07/2026
@@ -221,3 +221,19 @@ The message itself
 I was first using a blocklist of [400,401, 403 and 404] so other 4xx was slipping out and retried, then I use an allow list of [429 and 5xx].
 - **One difficulty/How I solved it** I was confused between which error should retry and which should not. Confusion got cleared after seeing some examples.
 - **Tomorrows Project** pagination.
+
+# Day - 34 Pagination
+[click here for the cod](./src/week5/day34.ts);
+
+- **Time** 12:41, 11/13/2026, To complete day 34 tooks me 6 hours,
+- **What I learned** day 34 was a great practice of async function, loops, if/else, promise, try/catch and reuse of day 32's code.
+- **One difficulty/How I solved it** there was many difficulties. 1st: calling one function inside another function and handle the response inside a function by loop. pushing into the array and using .map().
+- **Notes** *Pagination*: the API is stateless, so your code keeps the bookmark. limit stays fixed and offset += limit after each page.
+*Structure*: one function gets one page reliably, and another function loops over pages. Each has one job.
+*Failure signals*: a failed page must never look like an empty page. You compared [], null and throw, and picked null so the caller can branch on it.
+*Retry*: only retry errors that can go away, such as 429, 5xx and network errors. A 404 will never fix itself.
+*TypeScript*: a type annotation like const page: Market[] = await response.json() is a promise you make, not a check. response.json() returns any, so TypeScript can’t verify it.
+*For later*: a fixed 3 pages is only for today. Real code stops when a page comes back with fewer than limit items.
+
+- **Tomorrows project** cache, 
+
