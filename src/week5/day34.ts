@@ -40,7 +40,7 @@ async function fetchPage(offset: number): Promise<Market[] | null> {
     return null; 
 }
 
-async function fetchMarkets(){
+export async function fetchMarkets(): Promise<Market[]>{
     const allMarkets: Market[] = [];
     let offset = 0;
     const totalRequest = 3;
@@ -67,9 +67,11 @@ async function fetchMarkets(){
     }
     return allMarkets;
 }
-fetchMarkets().then(markets => {
-    console.log("Fetched markets:", markets, `Total markets fetched: ${markets.length}`);
-}).catch(error => {
-    console.error("Error in fetchMarkets:", error);
-})
+// fetchMarkets().then(markets => {
+//     console.log("Fetched markets:", markets, `Total markets fetched: ${markets.length}`);
+// }).catch(error => {
+//     console.error("Error in fetchMarkets:", error);
+// }) 
+
+//commented for day35.ts
 

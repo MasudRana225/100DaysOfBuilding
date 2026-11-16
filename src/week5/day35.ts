@@ -1,0 +1,55 @@
+//Cache
+import fs, { existsSync, lstat, readFileSync, writeFileSync } from 'fs';
+import { Market, fetchMarkets } from './day34';
+
+const OUTPUT_FILE = "markets.json";
+const CACHE_TTL_MS = 60_000; //60s
+
+interface Snapshot {
+    timestamp: string;
+    count: number;
+    markets: Market[];
+}
+
+function loadHistory(): Snapshot[] {
+    return existsSync(OUTPUT_FILE) ? JSON.parse(readFileSync(OUTPUT_FILE, "utf-8")) : [];
+}
+
+async function getMarkets(): Promise<Market[]> {
+    const history = loadHistory();
+    const last = history[history.length - 1];
+
+    //serve from cache if the last snapshot is fresh
+
+    if(last) {
+        const ageMs = Date.now() - new Date(last.timestamp).getTime();
+        if(ageMs < CACHE_TTL_MS) {
+            const waitSec = Math.ceil((CACHE_TTL_MS - ageMs) / 1000);
+            console.log(`Returning ${last.count} cached markets from ${last.timestamp}`);
+            console.log(`Markets don't change within 60 seconds. Try again in ${waitSec}.`);
+            return last.markets;
+        }
+    }
+
+    //Cache is missing or stale, so call the API
+    const markets = await fetchMarkets();
+
+    //Only a cache a successful, non-empty fetch
+    if(markets.length > 0) {
+        const snapshot: Snapshot = {
+            timestamp: new Date().toISOString(),
+            count: markets.length,
+            markets,
+        };
+        history.push(snapshot);
+        writeFileSync(OUTPUT_FILE, JSON.stringify(history, null, 2));
+        console.log(`Saved ${markets.length} markets at ${snapshot.timestamp}`);
+    }else{
+        console.log("Fetch returned no markets, so nothing was cached.");
+    }
+
+    return markets;
+}
+getMarkets()
+.then(markets => console.log(`Got ${markets.length} markets`))
+.catch(error => console.log("Error:", error))
