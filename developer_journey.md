@@ -237,3 +237,10 @@ I was first using a blocklist of [400,401, 403 and 404] so other 4xx was slippin
 
 - **Tomorrows project** cache, 
 
+# Day 35 - Cache: 
+[click here for the code](./src/week5/day35.ts)
+
+- **Time** 12:26 AM, 11/ 18/ 26 Time took 3 hours.
+- **What I learned** for day 34/35 cache is a saved copy of a previous result. before making a request, my code checks, "do I already have this, and is it still fresh enough?" if yes, it uses the saved copy. day 35 code fetches, saves the result, and return it.
+- **One difficulty / How I solved it** The only difficulty was the design of the workflow, solved by getting help from AI
+- **Tomorrows Projects** Review

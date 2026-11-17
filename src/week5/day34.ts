@@ -6,6 +6,9 @@ export interface Market {
     clobTokenIds: string[];
 }
 const limit = 5;
+const totalRequest = 3;
+
+export const EXPECTED_MARKET_COUNT = limit * totalRequest; //This for day 35 use
 
 async function fetchPage(offset: number): Promise<Market[] | null> {
     const maxRetries = 3;
@@ -43,7 +46,7 @@ async function fetchPage(offset: number): Promise<Market[] | null> {
 export async function fetchMarkets(): Promise<Market[]>{
     const allMarkets: Market[] = [];
     let offset = 0;
-    const totalRequest = 3;
+
 
     for(let i = 0; i <totalRequest; i++) {
         try {
